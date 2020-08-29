@@ -1,0 +1,36 @@
+﻿@model Urbanizacion.Web.Data.Entities.TBL_CONJUNTO
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TBL_CONJUNTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CON_NOMBRE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CON_NOMBRE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CON_IDENTIFICACION)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CON_IDENTIFICACION)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CON_TELEFONO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CON_TELEFONO)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CON_ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
