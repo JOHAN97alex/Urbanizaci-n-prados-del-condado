@@ -32,5 +32,7 @@ namespace Urbanizacion.Web.Data.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [Display(Name = "Celular")]
         public string CON_TELEFONO { get; set; }
+
+        public ICollection<TBL_PROPIETARIO> Propietario { get; set; }
     }
 }
