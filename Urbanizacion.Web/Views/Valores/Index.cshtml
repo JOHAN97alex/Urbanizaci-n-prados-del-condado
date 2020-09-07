@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Urbanizacion.Web.Data.Entities.TBL_VALOR>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VAL_VALOR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VAL_FECHAINICIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VAL_FECHAFIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VAL_FECHACREACION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VAL_ESTADO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VAL_VALOR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VAL_FECHAINICIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VAL_FECHAFIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VAL_FECHACREACION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VAL_ESTADO)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VAL_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.VAL_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.VAL_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

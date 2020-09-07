@@ -1,0 +1,42 @@
+﻿@model Urbanizacion.Web.Data.Entities.TBL_VEHICULO
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles del Registro</h2>
+
+<div>
+    <h4>TBL_VEHICULO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VEH_CODIGO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VEH_CODIGO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VEH_PLACA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VEH_PLACA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VEH_FECHACREACIONBASE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VEH_FECHACREACIONBASE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VEH_ESTADO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VEH_ESTADO)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.VEH_ID" class="glyphicon glyphicon-edit"></a> |
+    <a asp-action="Index"class="btn btn-success">Back to List</a>
+</div>

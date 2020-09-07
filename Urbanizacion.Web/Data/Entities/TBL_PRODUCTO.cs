@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@ namespace Urbanizacion.Web.Data.Entities
 {
     public class TBL_PRODUCTO
     {
+        [Key]
         public int PRO_ID { get; set; }
         public string PRO_NOMBRE { get; set; }
         public string PRO_PRECIO { get; set; }

@@ -1,6 +1,7 @@
 ﻿using Java.Sql;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace Urbanizacion.Web.Data.Entities
 {
     public class TBL_ROL
     {
+        [Key]
         public int ROL_ID { get; set; }
         public string ROL_DESCRIPCION { get; set; }
         public DateTime ROL_FECHACREACION { get; set; }
