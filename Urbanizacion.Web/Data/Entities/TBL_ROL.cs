@@ -14,7 +14,7 @@ namespace Urbanizacion.Web.Data.Entities
         public string ROL_DESCRIPCION { get; set; }
         public DateTime ROL_FECHACREACION { get; set; }
         public Char ROL_ESTADO { get; set; }
-        public ICollection<TBL_PROPIETARIO> Propietario { get; set; }
+      //  public ICollection<TBL_PROPIETARIO> Propietario { get; set; }
         public TBL_SERVICIO Servicio { get; set; }
     }
 }

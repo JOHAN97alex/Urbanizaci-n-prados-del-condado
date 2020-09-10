@@ -16,7 +16,7 @@ namespace Urbanizacion.Web.Data.Entities
         public string PAG_VALOR { get; set; }
         public DateTime PAG_FECHACREACION { get; set; }
         public char PAG_ESTADO { get; set; }
-        public TBL_PROPIETARIO Propietario { get; set; }
+       // public TBL_PROPIETARIO Propietario { get; set; }
         public ICollection<TBL_VALOR> Valor { get; set; }
     }
 }

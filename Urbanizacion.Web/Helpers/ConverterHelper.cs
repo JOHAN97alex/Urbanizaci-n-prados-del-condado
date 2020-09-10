@@ -34,5 +34,45 @@ namespace Urbanizacion.Web.Helpers
 
             };
         }
+
+        public TBL_PROPIETARIO ToTBL_PROPIETARIO(PropietarioViewModel model, bool isNew)
+        {
+            return new TBL_PROPIETARIO
+            {
+                PRO_ID = isNew ? 0 : model.PRO_ID,
+                PRO_LOTE = model.PRO_LOTE,
+                PRO_TIPO = model.PRO_TIPO,
+                PRO_NOMBRES = model.PRO_NOMBRES,
+                PRO_APELLIDOS = model.PRO_APELLIDOS,
+                PRO_OBSERVACIONES = model.PRO_OBSERVACIONES,
+                PRO_TELEFONO = model.PRO_TELEFONO,
+                PRO_EMAIL = model.PRO_EMAIL,
+                PRO_TIPOIDENTIFICACION = model.PRO_TIPOIDENTIFICACION,
+                PRO_IDENTIFICACION = model.PRO_IDENTIFICACION,
+                //PRO_FECHACREACIONBASE = DateTime.Now,
+                PRO_ESTADO = 'A'
+
+            };
+        }
+
+        public PropietarioViewModel ToPropietarioViewModel(TBL_PROPIETARIO tbl_Propietario)
+        {
+            return new PropietarioViewModel
+            {
+                PRO_ID = tbl_Propietario.PRO_ID,
+                PRO_LOTE = tbl_Propietario.PRO_LOTE,
+                PRO_TIPO = tbl_Propietario.PRO_TIPO,
+                PRO_NOMBRES = tbl_Propietario.PRO_NOMBRES,
+                PRO_APELLIDOS = tbl_Propietario.PRO_APELLIDOS,
+                PRO_OBSERVACIONES = tbl_Propietario.PRO_OBSERVACIONES,
+                PRO_TELEFONO = tbl_Propietario.PRO_TELEFONO,
+                PRO_EMAIL = tbl_Propietario.PRO_EMAIL,
+                PRO_TIPOIDENTIFICACION = tbl_Propietario.PRO_TIPOIDENTIFICACION,
+                PRO_IDENTIFICACION = tbl_Propietario.PRO_IDENTIFICACION,
+               // PRO_FECHACREACIONBASE = DateTime.Now,
+                PRO_ESTADO = 'A'
+
+            };
+        }
     }
 }

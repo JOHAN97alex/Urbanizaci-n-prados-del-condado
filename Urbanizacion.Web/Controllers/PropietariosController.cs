@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Urbanizacion.Web.Contexts;
 using Urbanizacion.Web.Data.Entities;
 using Urbanizacion.Web.Helpers;
+using Urbanizacion.Web.Models;
 
 namespace Urbanizacion.Web.Controllers
 {
@@ -31,8 +32,32 @@ namespace Urbanizacion.Web.Controllers
             return View(await _context
                 .TBL_PROPIETARIO
                 .Include(t => t.Vehiculo)
+                //.Include(t => t.Pago)
+                //.Include(t => t.Negocio)
                 .OrderBy(t => t.PRO_LOTE)
                 .ToListAsync());
         }
+
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(PropietarioViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var propietario = _converterHelper.ToTBL_PROPIETARIO(model, true);
+                _context.Add(propietario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(model);
+        }
+
     }
 }

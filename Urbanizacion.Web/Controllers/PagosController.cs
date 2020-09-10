@@ -29,7 +29,7 @@ namespace Urbanizacion.Web.Controllers
         {
             return View(await _context
                 .TBL_PAGO
-                .Include(t => t.Propietario)
+              //  .Include(t => t.Propietario)
                 .OrderBy(t => t.PAG_FECHAPAGADO)
                 .ToListAsync());
         }

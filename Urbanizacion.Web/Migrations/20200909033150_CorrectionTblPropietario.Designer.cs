@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Urbanizacion.Web.Contexts;
 
 namespace Urbanizacion.Web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200909033150_CorrectionTblPropietario")]
+    partial class CorrectionTblPropietario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -135,7 +137,13 @@ namespace Urbanizacion.Web.Migrations
 
                     b.Property<int?>("ConjuntoCON_ID");
 
+                    b.Property<string>("PRO_APELLIDOFAMILIAR");
+
                     b.Property<string>("PRO_APELLIDOS")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("PRO_APELLIDOSINQUILINO")
                         .IsRequired()
                         .HasMaxLength(50);
 
@@ -148,26 +156,40 @@ namespace Urbanizacion.Web.Migrations
 
                     b.Property<DateTime>("PRO_FECHACREACIONBASE");
 
-                    b.Property<string>("PRO_IDENTIFICACION")
-                        .IsRequired()
-                        .HasMaxLength(10);
+                    b.Property<DateTime>("PRO_FECHAINGRESOBASE");
+
+                    b.Property<DateTime>("PRO_FECHASALIDABASE");
+
+                    b.Property<string>("PRO_IDENTIFICACION");
+
+                    b.Property<bool>("PRO_INQUILINOS");
 
                     b.Property<string>("PRO_LOTE")
                         .IsRequired()
                         .HasMaxLength(4);
 
+                    b.Property<string>("PRO_NOMBREFAMILIAR");
+
                     b.Property<string>("PRO_NOMBRES")
                         .IsRequired()
                         .HasMaxLength(50);
 
+                    b.Property<string>("PRO_NOMBRESINQUILINO")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("PRO_NOMENCLATURA");
+
                     b.Property<string>("PRO_OBSERVACIONES");
 
                     b.Property<string>("PRO_TELEFONO")
-                        .IsRequired()
-                        .HasMaxLength(10);
-
-                    b.Property<string>("PRO_TIPO")
                         .IsRequired();
+
+                    b.Property<string>("PRO_TELEFONOFAMILIAR");
+
+                    b.Property<string>("PRO_TELEFONOINQUILINO");
+
+                    b.Property<string>("PRO_TIPO");
 
                     b.Property<string>("PRO_TIPOIDENTIFICACION")
                         .IsRequired()
@@ -183,7 +205,8 @@ namespace Urbanizacion.Web.Migrations
                         .IsUnique();
 
                     b.HasIndex("PRO_IDENTIFICACION")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[PRO_IDENTIFICACION] IS NOT NULL");
 
                     b.HasIndex("ROL_ID");
 
@@ -281,7 +304,7 @@ namespace Urbanizacion.Web.Migrations
 
                     b.Property<string>("VEH_PLACA")
                         .IsRequired()
-                        .HasMaxLength(4);
+                        .HasMaxLength(8);
 
                     b.HasKey("VEH_ID");
 

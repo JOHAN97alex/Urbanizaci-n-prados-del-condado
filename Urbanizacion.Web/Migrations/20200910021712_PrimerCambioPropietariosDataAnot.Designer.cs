@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Urbanizacion.Web.Contexts;
 
 namespace Urbanizacion.Web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200910021712_PrimerCambioPropietariosDataAnot")]
+    partial class PrimerCambioPropietariosDataAnot
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -135,6 +137,8 @@ namespace Urbanizacion.Web.Migrations
 
                     b.Property<int?>("ConjuntoCON_ID");
 
+                    b.Property<string>("PRO_APELLIDOFAMILIAR");
+
                     b.Property<string>("PRO_APELLIDOS")
                         .IsRequired()
                         .HasMaxLength(50);
@@ -148,21 +152,39 @@ namespace Urbanizacion.Web.Migrations
 
                     b.Property<DateTime>("PRO_FECHACREACIONBASE");
 
+                    b.Property<DateTime>("PRO_FECHAINGRESOBASE");
+
+                    b.Property<DateTime>("PRO_FECHASALIDABASE");
+
                     b.Property<string>("PRO_IDENTIFICACION")
                         .IsRequired()
                         .HasMaxLength(10);
+
+                    b.Property<bool>("PRO_INQUILINOS");
 
                     b.Property<string>("PRO_LOTE")
                         .IsRequired()
                         .HasMaxLength(4);
 
+                    b.Property<string>("PRO_NOMBREFAMILIAR");
+
                     b.Property<string>("PRO_NOMBRES")
                         .IsRequired()
                         .HasMaxLength(50);
 
+                    b.Property<string>("PRO_NOMENCLATURA");
+
                     b.Property<string>("PRO_OBSERVACIONES");
 
+                    b.Property<string>("PRO_PASSWORD");
+
+                    b.Property<string>("PRO_PERFIL");
+
                     b.Property<string>("PRO_TELEFONO")
+                        .IsRequired()
+                        .HasMaxLength(10);
+
+                    b.Property<string>("PRO_TELEFONOFAMILIAR")
                         .IsRequired()
                         .HasMaxLength(10);
 

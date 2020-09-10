@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Urbanizacion.Web.Data.Entities.TBL_ROL>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ROL_DESCRIPCION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ROL_FECHACREACION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ROL_ESTADO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ROL_DESCRIPCION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ROL_FECHACREACION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ROL_ESTADO)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ROL_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ROL_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ROL_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

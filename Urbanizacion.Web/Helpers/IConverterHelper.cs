@@ -13,5 +13,9 @@ namespace Urbanizacion.Web.Helpers
         TBL_VEHICULO ToTBL_VEHICULO(VehiculoViewModel model, bool isNew);
 
         VehiculoViewModel ToVehiculoViewModel(TBL_VEHICULO tbl_Vehiculo);
+
+        TBL_PROPIETARIO ToTBL_PROPIETARIO(PropietarioViewModel model, bool isNew);
+
+        PropietarioViewModel ToPropietarioViewModel(TBL_PROPIETARIO tbl_Propietario);
     }
 }

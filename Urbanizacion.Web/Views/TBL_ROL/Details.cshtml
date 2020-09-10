@@ -1,0 +1,36 @@
+﻿@model Urbanizacion.Web.Data.Entities.TBL_ROL
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TBL_ROL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ROL_DESCRIPCION)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ROL_DESCRIPCION)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ROL_FECHACREACION)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ROL_FECHACREACION)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ROL_ESTADO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ROL_ESTADO)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ROL_ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

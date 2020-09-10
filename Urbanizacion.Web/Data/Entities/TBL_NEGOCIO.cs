@@ -17,7 +17,7 @@ namespace Urbanizacion.Web.Data.Entities
         public string NEG_EMAIL { get; set; }
         public DateTime NEG_FECHACREACION { get; set; }
         public Char NEG_ESTADO { get; set; }
-        public TBL_PROPIETARIO Propietario { get; set; }
+       // public TBL_PROPIETARIO Propietario { get; set; }
         public ICollection<TBL_PRODUCTO> Producto { get; set; }
     }
 }
