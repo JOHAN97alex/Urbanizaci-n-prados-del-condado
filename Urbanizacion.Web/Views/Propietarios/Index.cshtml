@@ -75,6 +75,7 @@
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.PRO_ID" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i></a> |
                                 <a asp-action="Details" asp-route-id="@item.PRO_ID" class="btn btn-info"><i class="glyphicon glyphicon-list-alt"></i></a> |
+                                <a asp-action="Delete" asp-route-id="@item.PRO_ID" class="glyphicon glyphicon-remove"></a>
                                 <button data-id="@item.PRO_ID" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="glyphicon glyphicon-trash"></i></button>
                             </td>
                         </tr>

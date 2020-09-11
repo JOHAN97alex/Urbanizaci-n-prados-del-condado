@@ -49,9 +49,16 @@ namespace Urbanizacion.Web.Helpers
                 PRO_EMAIL = model.PRO_EMAIL,
                 PRO_TIPOIDENTIFICACION = model.PRO_TIPOIDENTIFICACION,
                 PRO_IDENTIFICACION = model.PRO_IDENTIFICACION,
+                PRO_NOMBREFAMILIAR = model.PRO_NOMBREFAMILIAR,
+                PRO_APELLIDOFAMILIAR = model.PRO_APELLIDOFAMILIAR,
+                PRO_TELEFONOFAMILIAR = model.PRO_TELEFONOFAMILIAR,
+                PRO_NOMENCLATURA = model.PRO_NOMENCLATURA,
+                PRO_FECHAINGRESOBASE = model.PRO_FECHAINGRESOBASE,
+                PRO_FECHASALIDABASE = model.PRO_FECHASALIDABASE,
+                PRO_INQUILINOS = model.PRO_INQUILINOS,
                 //PRO_FECHACREACIONBASE = DateTime.Now,
-                PRO_ESTADO = 'A'
-
+                PRO_ESTADO = 'A',
+                
             };
         }
 
@@ -69,7 +76,14 @@ namespace Urbanizacion.Web.Helpers
                 PRO_EMAIL = tbl_Propietario.PRO_EMAIL,
                 PRO_TIPOIDENTIFICACION = tbl_Propietario.PRO_TIPOIDENTIFICACION,
                 PRO_IDENTIFICACION = tbl_Propietario.PRO_IDENTIFICACION,
-               // PRO_FECHACREACIONBASE = DateTime.Now,
+                PRO_NOMBREFAMILIAR = tbl_Propietario.PRO_NOMBREFAMILIAR,
+                PRO_APELLIDOFAMILIAR = tbl_Propietario.PRO_APELLIDOFAMILIAR,
+                PRO_TELEFONOFAMILIAR = tbl_Propietario.PRO_TELEFONOFAMILIAR,
+                PRO_NOMENCLATURA = tbl_Propietario.PRO_NOMENCLATURA,
+                PRO_FECHAINGRESOBASE = tbl_Propietario.PRO_FECHAINGRESOBASE,
+                PRO_FECHASALIDABASE = tbl_Propietario.PRO_FECHASALIDABASE,
+                PRO_INQUILINOS = tbl_Propietario.PRO_INQUILINOS,
+                // PRO_FECHACREACIONBASE = DateTime.Now,
                 PRO_ESTADO = 'A'
 
             };

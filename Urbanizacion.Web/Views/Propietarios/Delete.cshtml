@@ -1,0 +1,121 @@
+﻿@model Urbanizacion.Web.Data.Entities.TBL_PROPIETARIO
+
+@{ ViewData["Title"] = "Delete"; }
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TBL_PROPIETARIO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_LOTE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_LOTE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_TIPO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_TIPO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_NOMBRES)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_NOMBRES)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_APELLIDOS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_APELLIDOS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_OBSERVACIONES)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_OBSERVACIONES)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_TELEFONO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_TELEFONO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_EMAIL)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_EMAIL)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_TIPOIDENTIFICACION)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_TIPOIDENTIFICACION)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_IDENTIFICACION)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_IDENTIFICACION)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_NOMBREFAMILIAR)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_NOMBREFAMILIAR)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_APELLIDOFAMILIAR)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_APELLIDOFAMILIAR)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_TELEFONOFAMILIAR)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_TELEFONOFAMILIAR)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_NOMENCLATURA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_NOMENCLATURA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_FECHAINGRESOBASE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_FECHAINGRESOBASE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_FECHASALIDABASE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_FECHASALIDABASE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_INQUILINOS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_INQUILINOS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRO_ESTADO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRO_ESTADO)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PRO_ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

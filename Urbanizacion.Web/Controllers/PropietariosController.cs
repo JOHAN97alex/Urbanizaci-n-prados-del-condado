@@ -38,6 +38,7 @@ namespace Urbanizacion.Web.Controllers
                 .ToListAsync());
         }
 
+        //METODO PARA CREAR
 
         public IActionResult Create()
         {
@@ -57,6 +58,60 @@ namespace Urbanizacion.Web.Controllers
             }
 
             return View(model);
+        }
+
+        //METODO PARA EDITAR
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            TBL_PROPIETARIO propietarioEntity = await _context.TBL_PROPIETARIO.FindAsync(id);
+            if (propietarioEntity == null)
+            {
+                return NotFound();
+            }
+
+            PropietarioViewModel model = _converterHelper.ToPropietarioViewModel(propietarioEntity);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(PropietarioViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                TBL_PROPIETARIO propietarioEntity = _converterHelper.ToTBL_PROPIETARIO(model, false);
+                _context.Update(propietarioEntity);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(model);
+        }
+
+
+        //METODO PARA ELIMINAR
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+           TBL_PROPIETARIO tbl_Propietario = await _context.TBL_PROPIETARIO
+                .FirstOrDefaultAsync(m => m.PRO_ID == id);
+            if (tbl_Propietario == null)
+            {
+                return NotFound();
+            }
+
+            _context.TBL_PROPIETARIO.Remove(tbl_Propietario);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
     }
